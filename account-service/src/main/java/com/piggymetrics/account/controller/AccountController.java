@@ -29,6 +29,7 @@ public class AccountController {
 
 	@RequestMapping(path = "/current", method = RequestMethod.PUT)
 	public void saveCurrentAccount(Principal principal, @Valid @RequestBody Account account) {
+		# FIXME[CWE-915]: Apply the standard secure pattern for this weakness. (OWASP ASVS V1.1)
 		accountService.saveChanges(principal.getName(), account);
 	}
 
